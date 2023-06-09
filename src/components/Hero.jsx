@@ -15,8 +15,8 @@ const Hero = ( { heroapi: {title, subtitle, btntext, img, sociallinks, videos} }
           <div className="grid items-center justify-items-center mt-28 md:mt-24">
             <h1 className="text-6xl lg:text-5xl
             md:text-4xl sm:text-3xl xsm:text-2xl font-extrabold filter drop-shadow-sm text-slate-200">{title}</h1>
-            <h1 className="text-6xl lg:text-5xl
-            md:text-4xl sm:text-3xl xsm:text-2xl font-extrabold filter drop-shadow-sm text-slate-200">{subtitle}</h1>
+            <h2 className="text-6xl lg:text-5xl
+            md:text-4xl sm:text-3xl xsm:text-2xl font-extrabold filter drop-shadow-sm text-slate-200">{subtitle}</h2>
             <button type="button" className="button-theme bg-slate-200 shadow-slate-200 raunded-xl my-5">{btntext}</button>
 
             {/* Videos */}
