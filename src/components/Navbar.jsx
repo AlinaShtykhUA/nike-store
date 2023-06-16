@@ -22,6 +22,13 @@ const Navbar = () => {
     );
   };
 
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  };
+
   const onNavScroll = () => {
     if (window.pageYOffset > 30) {
       setNavState(true);
@@ -57,7 +64,10 @@ const Navbar = () => {
             <img
               src={logo}
               alt='logo/img'
-              className={`w-16 h-auto ${navState && 'brightness-0'}`}
+              className={`cursor-pointer w-16 h-auto ${
+                navState && 'brightness-0'
+              }`}
+              onClick={scrollToTop}
             />
           </div>
           <ul className='flex items-center justify-center gap-2'>

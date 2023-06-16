@@ -20,8 +20,6 @@ const Cart = () => {
   const cartItems = useSelector(selectCartItems);
   const totalAmount = useSelector(selectTotalAmount);
   const totalQTY = useSelector(selectTotalQTY);
-  console.log(totalAmount);
-
   useEffect(() => {
     dispatch(setGetTotal());
   }, [cartItems, dispatch]);
@@ -37,6 +35,18 @@ const Cart = () => {
   const onClearCartItems = () => {
     dispatch(setClearCartItems());
   };
+
+  useEffect(() => {
+    const bodyElement = document.querySelector('body');
+    bodyElement.classList.add('scroll-style');
+    if (bodyElement) {
+      if (ifCartState) {
+        bodyElement.classList.add('no-scroll');
+      } else {
+        bodyElement.classList.remove('no-scroll');
+      }
+    }
+  }, [ifCartState]);
 
   return (
     <>
@@ -58,7 +68,7 @@ const Cart = () => {
             <CartEmpty onCartToggle={onCartToggle} />
           ) : (
             <div>
-              <div className='flex items-start justify-start flex-col gap-y-7 lg:gap-y-5 overflow-y-scroll h-[81vh] scroll-smooth scroll-hidden py-3'>
+              <div className='flex items-start justify-start flex-col gap-y-7 lg:gap-y-5 overflow-y-scroll h-[81vh] scroll-smooth py-3 scroll-style'>
                 {cartItems?.map((item) => {
                   return <CartItem key={item.id} item={item} />;
                 })}

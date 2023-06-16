@@ -1,4 +1,8 @@
-import { ChevronDoubleLeftIcon, XMarkIcon } from '@heroicons/react/24/solid';
+import {
+  ArchiveBoxXMarkIcon,
+  ChevronDoubleLeftIcon,
+  XMarkIcon,
+} from '@heroicons/react/24/solid';
 
 const CartCount = ({ onCartToggle, onClearCartItems, totalQTY }) => {
   return (
@@ -22,10 +26,10 @@ const CartCount = ({ onCartToggle, onClearCartItems, totalQTY }) => {
 
         <div className='flex items-center'>
           <button
-            className='rounded bg-theme-cart active:scale-90 p-0.5'
+            className='rounded bg-theme-cart active:scale-90 p-1 text-slate-100 '
             type='button'
             onClick={onClearCartItems}>
-            <XMarkIcon className='w-5 h-5 text-slate-100 sroke-[2]' />
+            <ArchiveBoxXMarkIcon className='w-5 h-5 text-slate-100 sroke-[2]' />
           </button>
         </div>
       </div>

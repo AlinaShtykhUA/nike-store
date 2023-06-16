@@ -78,12 +78,14 @@ const CartItem = ({
               <p className='text-sm text-slate-800 lg:text-xs'>{text}</p>
             </div>
 
-            <div className='flex items-center justify-around w-full'>
+            <div className='flex items-center gap-3 w-full'>
               <button
                 className='bg-theme-cart rounded w-6 h-6 lg:w-5 lg:h-5 flex items-center justify-center active:scale-90'
                 type='button'>
                 <MinusIcon
-                  onClick={onDecreaseItemQTY}
+                  onClick={
+                    cartQuantity === 1 ? onRemoveItem : onDecreaseItemQTY
+                  }
                   className='h-5 w-5 lg:h-4 lg:w-4 text-slate-100 storke-[2]'
                 />
               </button>
